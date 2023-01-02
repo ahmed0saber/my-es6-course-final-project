@@ -64,7 +64,7 @@ const getUsername = () => {
         return
     }
     if (!/^([a-z]|[A-Z])\w{2,}$/.test(username)) {
-        alert("username is not valid, it must start with a letter, and min length of 3 characters")
+        alert("username is not valid, it must start with a letter, and min length of 3 non symbol or space characters")
         return
     }
     return username
