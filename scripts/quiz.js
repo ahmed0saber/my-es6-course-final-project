@@ -1,13 +1,8 @@
-
 const getQuestionsFromAPI = async () => {
     const response = await fetch("https://quiz-api-0a7v.onrender.com/questions")
     const jsonResponse = await response.json()
 
     return jsonResponse
-}
-
-const printQuestion = async () => {
-    console.log(await getQuestionsFromAPI())
 }
 
 const displayQuestions = async () => {
@@ -20,9 +15,9 @@ const displayQuestions = async () => {
             <div class="question-container">
                 <p class="question">${question.question}</p>
                 <div class="answers-container">
-                    <div class="answer" data-index=${0}>${question.answers[0]}</div>
-                    <div class="answer" data-index=${1}>${question.answers[1]}</div>
-                    <div class="answer" data-index=${2}>${question.answers[2]}</div>
+                    <div class="answer" data-index="0">${question.answers[0]}</div>
+                    <div class="answer" data-index="1">${question.answers[1]}</div>
+                    <div class="answer" data-index="2">${question.answers[2]}</div>
                 </div>
             </div>
         `
@@ -97,7 +92,8 @@ const getLeaderboardFromLocalStorage = () => {
 
 const addRecordToLocalStorage = (username, score) => {
     const currentLeaderboard = getLeaderboardFromLocalStorage()
-    let tempArray = [], rightPositionIsFound = false
+    const tempArray = []
+    let rightPositionIsFound = false
     for (let i = 0; i < currentLeaderboard.length;) {
         if (currentLeaderboard[i].score >= score || rightPositionIsFound) {
             tempArray.push(currentLeaderboard[i])
