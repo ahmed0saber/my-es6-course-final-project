@@ -35,11 +35,7 @@ const handleAnswerSelection = () => {
             for (let j = 0; j < questionAnswers.length; j++) {
                 questionAnswers[j].classList.remove("checked")
             }
-            if (answers[i].classList.contains("checked")) {
-                answers[i].classList.remove("checked")
-            } else {
-                answers[i].classList.add("checked")
-            }
+            answers[i].classList.add("checked")
         })
     }
 }
